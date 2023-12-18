@@ -1,0 +1,71 @@
+﻿@page
+@model LONE.Models.AgentViewModel
+@{
+    ViewBag.Title = "Agent Info";
+}
+<h2>Agent Info</h2>
+@using (Html.BeginForm("AgentInfo", "Requests", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+<div class="form-horizontal">
+    <h4>Provide agent information</h4>
+    <hr />
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+            @Html.LabelFor(model => model.agent_fullname, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+                @Html.TextBoxFor(model => model.agent_fullname)
+                @Html.ValidationMessageFor(model => model.agent_fullname)
+        </div>
+    </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.agent_address1, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.agent_address1)
+                @Html.ValidationMessageFor(model => model.agent_address1)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.agent_contact_address2, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.agent_contact_address2)
+                @Html.ValidationMessageFor(model => model.agent_contact_address2)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.agent_town, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.agent_town)
+                @Html.ValidationMessageFor(model => model.agent_town)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.agent_contact_address_county, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.agent_contact_address_county)
+                @Html.ValidationMessageFor(model => model.agent_contact_address_county)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.agent_postcode, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.agent_postcode)
+                @Html.ValidationMessageFor(model => model.agent_postcode)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.agent_country, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.agent_country)
+                @Html.ValidationMessageFor(model => model.agent_country)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" name="BtnPrevious" value="Previous" class="btn btn-default" />
+                <input type="submit" name="BtnNext" value="Next" class="btn btn-default" />
+            </div>
+        </div>
+</div>
+} 

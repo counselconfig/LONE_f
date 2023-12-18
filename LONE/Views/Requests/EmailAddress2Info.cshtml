@@ -1,0 +1,29 @@
+﻿@model LONE.Models.EmailAddressViewModel
+@{
+    ViewBag.Title = "Email Address 2 Info";
+}
+<h2>Requestor Email Info</h2>
+@using (Html.BeginForm("Emailcontact_address2Info", "Requests", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.contact_email, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.contact_email)
+            @Html.ValidationMessageFor(model => model.contact_email)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.contact_email2, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.contact_email2)
+            @Html.ValidationMessageFor(model => model.contact_email2)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" name="BtnPrevious" value="Previous" class="btn btn-default" />
+            <input type="submit" name="BtnNext" value="Next" class="btn btn-default" />
+        </div>
+    </div>
+}
+

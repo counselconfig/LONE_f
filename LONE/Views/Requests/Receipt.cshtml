@@ -1,0 +1,36 @@
+﻿@model LONE.Models.PaymentViewModel
+@{
+    ViewBag.Title = "Receipt";
+}
+<h2>Receipt</h2>
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <td>Reference no</td>
+                <td>@Html.DisplayFor(model => model.reference)</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>@Html.DisplayFor(model => model.state.status)</td>
+            </tr>
+            <tr>
+                <td>Finished</td>
+                <td>@Html.Raw(Model.state.finished)</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>@Html.DisplayFor(model => model.description)</td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td>@Html.DisplayFor(model => model.amount)</td>
+            </tr>
+            <tr>
+                <td>Created Date</td>
+                <td>@Html.DisplayFor(model => model.created_date)</td>
+            </tr>
+        </tbody>
+    </table>
+    <input id="Button1" type="button" value="Home" onclick="location.href= 'https://localhost:7160/Requests'" />
+</div>

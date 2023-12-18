@@ -1,0 +1,47 @@
+﻿@model LONE.Models.PaymentViewModel
+@{
+    ViewBag.Title = "Summary2";
+}
+<h2>Summary</h2>
+<div class="form-group">
+    <p>
+        Personal details of the subject search<br>
+        <strong>First name: </strong>@ViewBag.subject_forename<br>
+        <strong>Last name: </strong>@ViewBag.subject_surname<br>
+        <strong>Alternative first name: </strong>@ViewBag.other_forename<br>
+        <strong>Alternative last name: </strong>@ViewBag.other_surname<br>
+        <strong>Date of birth: </strong>@ViewBag.birth_date<br>
+        <strong>Date of death: </strong>@ViewBag.death_date<br>
+        <strong>Country of birth: </strong>@ViewBag.country_of_birth<br>
+        <br>
+        Who the letter is for<br>
+        <strong>Title: </strong>@ViewBag.contact_title<br>
+        <strong>First name: </strong>@ViewBag.contact_first_name<br>
+        <strong>Last name: </strong>@ViewBag.contact_last_name<br>
+        <strong>Address line 1: </strong>@ViewBag.contact_address1<br>
+        <strong>Address line 2: </strong>@ViewBag.contact_address2<br>
+        <strong>Town or city: </strong>@ViewBag.contact_address_town_city<br>
+        <strong>contact_address_county: </strong>@ViewBag.contact_address_county<br>
+        <strong>Postcode: </strong>@ViewBag.contact_address_postcode<br>
+        <strong>Country: </strong>@ViewBag.contact_address_country<br>
+        <strong>Email address: </strong>@ViewBag.contact_email<br>
+        <br>
+        Agent details<br>
+        <strong>Full name: </strong>@ViewBag.agent_fullname<br>
+        <strong>Address line 1: </strong>@ViewBag.agent_address1<br>
+        <strong>Address line 2: </strong>@ViewBag.agent_contact_address2<br>
+        <strong>Town or city: </strong>@ViewBag.agent_town<br>
+        <strong>contact_address_county: </strong>@ViewBag.agent_contact_address_county<br>
+        <strong>Postcode: </strong>@ViewBag.agent_postcode<br>
+    </p>
+</div>
+@using (Html.BeginForm("Summary2", "Requests", FormMethod.Post))
+{
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" name="BtnPrevious" value="Previous" class="btn btn-default" />
+            <input type="submit" name="BtnNext" value="Next" class="btn btn-default" />
+        </div>
+    </div>
+}
