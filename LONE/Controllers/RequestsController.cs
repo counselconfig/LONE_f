@@ -302,7 +302,7 @@ namespace LONE.Controllers
         }
 
         [HttpPost]
-        public ActionResult Emailcontact_address2Info(EmailAddressViewModel emailaddress, string btnPrevious, string btnNext)
+        public ActionResult Emailcontact_address2Info(EmailAddressViewModel emailaddress, string btnPrevious, string btnNext) //remove "contact_" from the method name?
         {
             Request request = GetRequest();
             if (btnPrevious != null)
