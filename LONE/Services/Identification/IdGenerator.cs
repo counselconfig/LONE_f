@@ -1,26 +1,24 @@
-using System.Text;
+﻿using System.Text;
 
 namespace LONE.Services.Identification
 {
     public static class IdGenerator
     {
-	
-			
         public static string TNAReferenceNumber()
         {
             string prefix = "TNA";
-            System.DateTime dt = System.DateTime.Now;
+            DateTime dt = DateTime.Now;
             string time_stamp = dt.ToString("HHmmssffff");
-            System.Random random = new System.Random();
+            Random random = new Random();
             int r = random.Next(0, 26);
-            System.Char letter = (Char)('A' + r);
-            System.Random rnd = new System.Random();
+            Char letter = (Char)('A' + r);
+            Random rnd = new Random();
             string suffix = letter + rnd.Next(10, 99).ToString();
             return prefix + time_stamp + suffix;
         }
         private static string CODE_OPTIONS = "QWRTYPDFHJKXCVNM";
         private static char TRANSACTION_IDENTIFIER = 'N';
-        private static string year = System.DateTime.Now.ToString("yy");
+        private static string year = DateTime.Now.ToString("yy");
         public static string GenerateSessionId(int orderId)
         {
             int paddedid = orderId + 1000000000;
